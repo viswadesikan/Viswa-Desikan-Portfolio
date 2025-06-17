@@ -1,8 +1,14 @@
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
+import os
+import secrets
+
+# Generate a secret key
+SECRET_KEY = secrets.token_hex(32)
 
 app = Flask(__name__)
-app.secret_key = 'secret-key-for-flashing'  # Needed for flash messages
+app.secret_key = os.environ.get('SECRET_KEY') 
+
 
 # Mail config
 app.config.update(
