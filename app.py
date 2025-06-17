@@ -4,10 +4,10 @@ import os
 import secrets
 
 # Generate a secret key
-SECRET_KEY = secrets.token_hex(32)
+SECRET_KEY = '7acaf310498fb5ab8a3fbb74464fe8fedd88b3a73c8f7bd5425a030cae708feb'
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY') 
+app.secret_key = SECRET_KEY
 
 
 # Mail config
